@@ -1,2 +1,92 @@
 @charset "UTF-8";
+@import url('https://fonts.cdnfonts.com/css/games');
 
+body {
+    background: url(..//maratona-programarParaEvoluir-main/src/img/bg.png);
+    background-size: cover;
+    width: 95vw;
+    height: 95vh;
+}
+
+main {
+    width: 90vw;
+    height: 80vh;
+    border: 2px solid rgba(0, 2, 148, 0.397);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.274);
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(173, 216, 230, 0.452);
+}
+main:hover {
+    cursor: pointer;
+    background-color: rgba(173, 216, 230, 0.534);
+}
+
+#mario {
+    display: block;
+    float: left;
+    margin: 50px 80px 30px 120px;
+}
+div#mario > img {
+    width: 300px;
+    height: 200px;
+   
+}
+#paragraf {
+    display: block;
+    text-align: center;
+    float: right;
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 50px 120px 30px 80px;
+    font-family: 'Games', sans-serif;
+                                                
+}
+
+
+#maratona{
+    display: block;
+    float: left;
+    margin: 0px 80px 80px 120px;
+}
+div#maratona > img {
+    width: 300px;
+    height: 80px;
+}
+
+#jogar {
+    display: block;
+    float: right;
+    margin: 0px 140px 80px 80px;
+}
+
+button {
+    width: 300px;
+    height: 65px;
+}
+div#jogar > button > a {
+    font-size: 45px;
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    line-height: 30px;
+}
+#mudar:hover {
+    color:lightblue;
+    background-color: none;
+}
+
+#kenzie {
+    display: block;
+    float: left;
+    margin-left:-300px;
+    margin-top: 130px;
+}
+
+div#kenzie > img {
+    width: 100px;
+    height: 30px;
+}
