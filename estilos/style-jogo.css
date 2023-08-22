@@ -10,6 +10,15 @@ body {
     background-size: cover;
 }
 
+main > img {
+    display: inline-block;
+    margin: 20px 50px 20px 70px;
+    width:200px;
+    height: 200px;
+}
+
+
+
 #foto {
     display: block;
 
@@ -25,6 +34,8 @@ body {
     font-size: 30px;
     
 }
+
+
 
 #ponto {
     display: block;
@@ -56,8 +67,5 @@ div#botao > button > a {
    
 }
 
-.question {
-    display: inline-block;
-    padding: 30px 80px 10px 50px ;
-}
+
 

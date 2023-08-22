@@ -7,9 +7,9 @@ img: '..//projeto-inicial/img/Boo.png',
 },
 
 {
-id: 'goonba',
-name:'boo',
-img: '..//projeto-inicial/img/Goonba.png',
+id: '1',
+name:'Goomba',
+img: '..//projeto-inicial/img/Goomba.png',
     
 },
 

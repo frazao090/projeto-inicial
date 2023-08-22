@@ -1,23 +1,92 @@
 const main = document.getElementById('main');
+const placarTag = document.getElementById('placar');
+const round1Tag = document.getElementById('round1');
+let click01 = null;
+let click02 = null;
 
-renderizarCartas()
-const arrDuplicado = [...personagens,...personagens];
-const personagensEmbaralhados = shuffleArray(personagens);
+let encontrados = 0;
+let placar = 0;
+let round1 = 1;
 
-console.log(arrDuplicado);
+renderizarCartas();
 
 function renderizarCartas() {
-    for (let i = 0; i < personagens.length ; i++) {
 
-        let cartaA = document.createElement('img');
-        cartaA.src="..//projeto-inicial/img/QuestionBlock.png";
-        let cartaB = document.createElement("img");
-        cartaB.src="..//projeto-inicial/img/QuestionBlock.png";
+const arrDuplicado = [...personagens, ...personagens];
+const personagensEmbaralhados = shuffleArray(arrDuplicado);
+console.log(personagensEmbaralhados);
+
+
+
+    for (let i = 0; i < personagensEmbaralhados.length; i++) {
+
+        let carta = document.createElement('img');
+        
+        carta.id = personagensEmbaralhados[i].id;
+        carta.addEventListener("click", clickCarta);
+        
+        carta.src ="..//projeto-inicial/img/QuestionBlock.png";
+        main.appendChild(carta);
+       
+    }
     
+}
 
+function clickCarta(event) {
+    const imgClicada = event.target
+    let idClicado = event.target.id;
+    let personagemClicado = personagens.find((elemento)=> elemento.id == idClicado);
 
-        main.appendChild(cartaA);
-        main.appendChild(cartaB);
+    imgClicada.src = personagemClicado.img;
+    
+    if(click01 == null) {
+        click01 = imgClicada;
+    }
+
+    else {
+        click02 = imgClicada;
+        testePar();
+    }
+
+   
+   
+
+}
+
+ function testePar() {
+    if (click01.id == click02.id){
+        console.log('encontrei um par');
+        encontrados ++
+        click01 = null;
+        click02 = null;
+
+        if(encontrados == 4) {
+            placar ++;
+            placarTag.innerHTML = placar;
+            round1 ++;
+            round1Tag.innerHTML = round1;
+            encontrados = 0;
+            setTimeout(() => {
+            alert('Você encontrou todos!');
+        }, 700);
+
+        setTimeout(() => {
+        main.innerHTML = ''
+        renderizarCartas();
+    }, 700);
+    }
+
+    } else {
+
+        
+
+        setTimeout(() => {
+           
+            click01.src = "..//projeto-inicial/img/QuestionBlock.png" ;click02.src = "..//projeto-inicial/img/QuestionBlock.png"; click01 = null;
+            click02 = null; },2000);
+        
+       
+        console.log('Não é par');
     }
 }
 
